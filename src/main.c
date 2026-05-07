@@ -3,24 +3,20 @@
 char shift_char(char plain_letter, int shift_value) {
     int offset, k;
     int normalise_shift;
+
     normalise_shift = ((shift_value % 26) + 26) % 26;
+
     if (islower(plain_letter)) {
         offset = plain_letter - 'a';
         k = (offset + normalise_shift) % 26;
+        return k + 'a';
 
-        if (k < 0)
-            k += 26;
-
-        return k+'a';
     } else if (isupper(plain_letter)) {
 
         offset = plain_letter - 'A';
         k = (offset + normalise_shift) % 26;
-
-        if (k < 0)
-            k += 26;
-
         return k + 'A';
+
     } else {
         return plain_letter;
     }
@@ -28,7 +24,7 @@ char shift_char(char plain_letter, int shift_value) {
 
 int main() {
 
-    printf("%c\n", shift_char('a', 233));
+    printf("shift by 2 is %c\n", shift_char('a', 2));
 
     return 0;
 }
