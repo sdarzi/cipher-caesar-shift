@@ -1,0 +1,22 @@
+# Build output
+build/
+*.o
+ 
+# Compiled binaries 
+main
+
+
+# Debug files
+*.dSYM/
+core
+ 
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+ 
+# OS
+.DS_Store
+Thumbs.db
