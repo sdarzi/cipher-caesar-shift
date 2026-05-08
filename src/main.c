@@ -1,5 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
+
+#define BUFFER_LIMIT 1000
 char shift_char(char plain_letter, int shift_value) {
     int offset, k;
     int normalise_shift;
@@ -22,9 +24,24 @@ char shift_char(char plain_letter, int shift_value) {
     }
 }
 
+void cipher_string(const char *input, char *output, int shift_value){
+    while (*input != '\0'){
+        *output = shift_char(*input, shift_value);
+        output++;
+        input++;
+    }
+    *output = '\0';
+}
+
 int main() {
+    char plaintext [] = "dani is a kooni";
+    char ciphertext [BUFFER_LIMIT];
+    char ciphertext2 [BUFFER_LIMIT] ;
+    cipher_string(plaintext, ciphertext, 6);
 
-    printf("shift by 2 is %c\n", shift_char('a', 2));
+    printf("%s\n", ciphertext);
+    cipher_string(ciphertext, ciphertext2, -6);
 
+    printf("%s\n", ciphertext2);
     return 0;
 }
