@@ -1,7 +1,9 @@
-# Simple caesar shift cipher program
+# classical-crypto
 
 ## Purpose
-Takes a bit of plaintext and produces cipher text based on a specified shift
+Currently just a bit of different classical crypto work in C.
 
 ## Status
-Currently work in progress
+- [x] caesar cipher
+- [] frequency analysis
+- [] Vigenere cipher
